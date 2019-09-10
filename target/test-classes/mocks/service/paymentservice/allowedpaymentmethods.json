@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "BANKSLIP",
+    "brand": null,
+    "status": true
+  },
+  {
+    "id": 2,
+    "name": "CREDIT CARD",
+    "brand": "VISA",
+    "status": true
+  },
+  {
+    "id": 3,
+    "name": "CREDIT CARD",
+    "brand": "MASTER",
+    "status": true
+  }
+]

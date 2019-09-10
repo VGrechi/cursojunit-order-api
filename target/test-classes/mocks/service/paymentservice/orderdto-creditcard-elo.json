@@ -1,0 +1,20 @@
+{
+  "amount": 10,
+  "customerId": 1,
+  "sku": "MONITORA-1701",
+  "quantity": 1,
+  "value": 10,
+  "paymentMethods": [
+    {
+      "paymentMethod": "CREDIT CARD",
+      "paymentAmount": 10,
+      "creditCard": {
+        "cardHolderName": "Victor Luiz Grechi",
+        "brand": "ELO",
+        "cardNumber": "1234123412341234",
+        "expirationDate": "10/2020",
+        "cvv": 123
+      }
+    }
+  ]
+}
