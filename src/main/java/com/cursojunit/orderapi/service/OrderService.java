@@ -13,6 +13,9 @@ import com.cursojunit.orderapi.model.dto.OrderDTO;
 import com.cursojunit.orderapi.utils.DateTimeUtils;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -24,7 +27,8 @@ import static com.cursojunit.orderapi.entities.public_.tables.Event.EVENT;
 import static com.cursojunit.orderapi.entities.public_.tables.Order.ORDER;
 import static com.cursojunit.orderapi.entities.public_.tables.Paymentmethod.PAYMENTMETHOD;
 
-@Service
+
+@Component
 public class OrderService {
 
     @Autowired
