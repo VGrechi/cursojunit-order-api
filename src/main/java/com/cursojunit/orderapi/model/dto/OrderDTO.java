@@ -6,12 +6,14 @@ import java.util.List;
 
 public class OrderDTO {
 
+    private Integer orderId;
     private Double amount;
     private Integer customerId;
     private String sku;
     private Integer quantity;
     private Double value;
     private List<PaymentMethod> paymentMethods;
+
 
     /*
     * Getters and Setters
@@ -63,5 +65,9 @@ public class OrderDTO {
 
     public void setPaymentMethods(List<PaymentMethod> paymentMethods) {
         this.paymentMethods = paymentMethods;
+    }
+
+    public Integer getOrderId() {
+        return orderId;
     }
 }

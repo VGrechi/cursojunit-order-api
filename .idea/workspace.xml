@@ -2,13 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edc3e820-47ee-4b90-bfa8-10954c40fb4d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/provider/ControlBalanceAPIProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/provider/PaymentAPIProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/repository/EventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/repository/PaymentMethodRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cursojunit/orderapi/unit/ControlBalanceServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cursojunit/orderapi/unit/OrderControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cursojunit/orderapi/unit/PaymentServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application-test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mocks/service/orderservice/orderdto-recharge.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/model/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/model/dto/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/service/ControlBalanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/service/ControlBalanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/utils/ValidationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/utils/ValidationUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cursojunit/orderapi/unit/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cursojunit/orderapi/unit/OrderServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/scripts/db-initializer.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/scripts/db-initializer.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="213" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -22,9 +45,19 @@
   </component>
   <component name="ProjectId" id="1QYZBRY9gvicnk87MRlwzohdmUo" />
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/service" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/service" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/provider" />
+      <recent name="$PROJECT_DIR$/src/test/java/com/cursojunit/orderapi/unit" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -38,36 +71,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.OrderApiApplication">
-    <configuration name="OrderApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cursojunit.orderapi.OrderApiApplication" />
+  <component name="RunManager" selected="JUnit.OrderServiceTest.testRechargeOrderSuccessfully">
+    <configuration name="OrderControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-api" />
       <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cursojunit.orderapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
         <pattern>
           <option name="PATTERN" value="com.cursojunit.orderapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cursojunit.orderapi.unit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="com.cursojunit.orderapi.unit" />
-      <option name="MAIN_CLASS_NAME" value="com.cursojunit.orderapi.unit.OrderServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.cursojunit.orderapi.unit.OrderControllerTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderServiceTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderControllerTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-api" />
       <extension name="coverage">
         <pattern>
@@ -76,23 +102,75 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cursojunit.orderapi.unit" />
-      <option name="MAIN_CLASS_NAME" value="com.cursojunit.orderapi.unit.OrderServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.cursojunit.orderapi.unit.OrderControllerTest" />
       <option name="METHOD_NAME" value="test01" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderControllerTest.test02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cursojunit.orderapi.unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cursojunit.orderapi.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.cursojunit.orderapi.unit.OrderControllerTest" />
+      <option name="METHOD_NAME" value="test02" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderControllerTest.test03" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cursojunit.orderapi.unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cursojunit.orderapi.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.cursojunit.orderapi.unit.OrderControllerTest" />
+      <option name="METHOD_NAME" value="test03" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceTest.testRechargeOrderSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cursojunit.orderapi.unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cursojunit.orderapi.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.cursojunit.orderapi.unit.OrderServiceTest" />
+      <option name="METHOD_NAME" value="testRechargeOrderSuccessfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.OrderApiApplication" />
-      <item itemvalue="JUnit.OrderServiceTest" />
-      <item itemvalue="JUnit.OrderServiceTest.test01" />
+      <item itemvalue="JUnit.OrderControllerTest.test01" />
+      <item itemvalue="JUnit.OrderControllerTest.test02" />
+      <item itemvalue="JUnit.OrderControllerTest.test03" />
+      <item itemvalue="JUnit.OrderControllerTest" />
+      <item itemvalue="JUnit.OrderServiceTest.testRechargeOrderSuccessfully" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OrderApiApplication" />
-        <item itemvalue="JUnit.OrderServiceTest.test01" />
-        <item itemvalue="JUnit.OrderServiceTest" />
+        <item itemvalue="JUnit.OrderServiceTest.testRechargeOrderSuccessfully" />
+        <item itemvalue="JUnit.OrderControllerTest" />
+        <item itemvalue="JUnit.OrderControllerTest.test03" />
+        <item itemvalue="JUnit.OrderControllerTest.test02" />
+        <item itemvalue="JUnit.OrderControllerTest.test01" />
       </list>
     </recent_temporary>
   </component>
@@ -117,5 +195,25 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="README file." />
     <option name="LAST_COMMIT_MESSAGE" value="README file." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cursojunit/orderapi/service/OrderService.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/orderapi$OrderServiceTest.exec" NAME="OrderServiceTest Coverage Results" MODIFIED="1568327188306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.cursojunit.orderapi.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/orderapi$OrderControllerTest.ic" NAME="OrderControllerTest Coverage Results" MODIFIED="1568330469283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.cursojunit.orderapi.service.*</FILTER>
+      <FILTER>com.cursojunit.orderapi.*</FILTER>
+    </SUITE>
   </component>
 </project>

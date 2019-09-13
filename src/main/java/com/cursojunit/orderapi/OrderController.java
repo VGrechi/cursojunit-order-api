@@ -34,6 +34,8 @@ public class OrderController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
+        //
+
         Order order = orderService.createOrder(orderDTO);
         return new ResponseEntity<>(order, HttpStatus.CREATED);
     }
@@ -53,9 +55,9 @@ public class OrderController {
     }
 
     @PostMapping(value = "/{orderId}/recharge", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Order> postOrder(@PathVariable Integer orderId, @RequestBody Order order) {
-        //TODO Unit Tests using TDD
-        return new ResponseEntity<>(order, HttpStatus.NOT_IMPLEMENTED);
+    public ResponseEntity<Order> postOrder(@PathVariable Integer orderId, @RequestBody OrderDTO orderDTO) {
+        orderService.rechargeOrder(orderId, orderDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

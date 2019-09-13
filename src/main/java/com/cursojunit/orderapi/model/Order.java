@@ -2,6 +2,7 @@ package com.cursojunit.orderapi.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class Order {
 
@@ -82,4 +83,23 @@ public class Order {
         this.events = events;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return Objects.equals(orderId, order.orderId) &&
+                Objects.equals(amount, order.amount) &&
+                Objects.equals(customerId, order.customerId) &&
+                Objects.equals(sku, order.sku) &&
+                Objects.equals(quantity, order.quantity) &&
+                Objects.equals(value, order.value) &&
+                Objects.equals(creationDate, order.creationDate) &&
+                Objects.equals(events, order.events);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderId, amount, customerId, sku, quantity, value, creationDate, events);
+    }
 }

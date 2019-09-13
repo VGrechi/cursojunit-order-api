@@ -5,8 +5,10 @@ import com.cursojunit.orderapi.model.Event;
 import com.cursojunit.orderapi.model.dto.AllowedPaymentMethodDTO;
 import com.cursojunit.orderapi.model.dto.OrderDTO;
 import com.cursojunit.orderapi.model.dto.PaymentDTO;
+import com.cursojunit.orderapi.provider.PaymentAPIProvider;
 import com.cursojunit.orderapi.utils.JsonUtils;
 import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -26,8 +28,11 @@ public class PaymentService {
     @Value("${order.api.bankslip.max.value}")
     private Double bankslipMaxValue;
 
+    @Autowired
+    private PaymentAPIProvider paymentAPIProvider;
+
     public void payOrder(OrderDTO orderDTO, Integer orderId, Event event) throws PaymentException {
-        List<AllowedPaymentMethodDTO> paymentMethods = this.getPaymentMethods();
+        List<AllowedPaymentMethodDTO> paymentMethods = paymentAPIProvider.getPaymentMethods();
         boolean isValid = this.validatePaymentMethod(orderDTO, paymentMethods);
         if(!isValid)
             throw new PaymentException("Invalid Payment method");
@@ -41,25 +46,10 @@ public class PaymentService {
         paymentDTO.setEventId(event.getEventId());
         paymentDTO.setTotalAmount(orderDTO.getAmount());
         paymentDTO.setPaymentMethods(orderDTO.getPaymentMethods());
-        this.processPayment(paymentDTO);
+        paymentAPIProvider.processPayment(paymentDTO);
     }
 
-    private List<AllowedPaymentMethodDTO> getPaymentMethods() throws PaymentException {
-        try{
-            URL url = new URL("http://localhost:8081/paymentmethods/allowed");
-            HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
-            httpConnection.setRequestMethod(HttpMethod.GET.toString());
 
-            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                String responseJson = IOUtils.toString(httpConnection.getInputStream(), StandardCharsets.UTF_8);
-                return (List<AllowedPaymentMethodDTO>) JsonUtils.convertToList(responseJson, AllowedPaymentMethodDTO.class);
-            } else {
-                throw new PaymentException("Connection Error to Payment API");
-            }
-        }catch (Exception e){
-            throw new PaymentException("Connection Error to Payment API");
-        }
-    }
 
     private boolean validatePaymentMethod(OrderDTO orderDTO, List<AllowedPaymentMethodDTO> allowedPaymentMethodDTOS){
         AtomicBoolean valid = new AtomicBoolean(false);
@@ -92,31 +82,5 @@ public class PaymentService {
         return valid.get();
     }
 
-    private PaymentDTO processPayment(PaymentDTO paymentDTO) throws PaymentException {
-        try{
-            String requestBody = JsonUtils.convertToJson(paymentDTO);
 
-            URL url = new URL("http://localhost:8081/payments/");
-            HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
-            httpConnection.setRequestMethod(HttpMethod.POST.toString());
-            httpConnection.setRequestProperty(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-            httpConnection.setDoOutput(true);
-
-            OutputStream outputStream = httpConnection.getOutputStream();
-            outputStream.write(requestBody.getBytes());
-            outputStream.flush();
-            outputStream.close();
-
-            httpConnection.connect();
-
-            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                String responseJson = IOUtils.toString(httpConnection.getInputStream(), StandardCharsets.UTF_8);
-                return (PaymentDTO) JsonUtils.convertToObject(responseJson, PaymentDTO.class);
-            } else {
-                throw new PaymentException("Connection Error to Payment API");
-            }
-        }catch (Exception e){
-            throw new PaymentException("Connection Error to Payment API");
-        }
-    }
 }

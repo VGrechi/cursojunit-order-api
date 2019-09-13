@@ -19,7 +19,10 @@ public class ValidationUtils {
         if(orderDTO.getValue() == null || orderDTO.getValue() <= 0) requestErrors.add("Value is missing.");
 
         if(orderDTO.getPaymentMethods() == null || orderDTO.getPaymentMethods().size() == 0) requestErrors.add("Payment Method List is missing.");
-        orderDTO.getPaymentMethods().stream().forEach(paymentMethod -> isPaymentMethodValid(paymentMethod));
+
+        if(orderDTO.getPaymentMethods() != null) {
+            orderDTO.getPaymentMethods().stream().forEach(paymentMethod -> isPaymentMethodValid(paymentMethod));
+        }
 
         return requestErrors.size() == 0;
     }
